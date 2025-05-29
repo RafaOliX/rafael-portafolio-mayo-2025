@@ -10,15 +10,15 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="max-w-xl mx-auto
+<body class="
   min-h-dvh
   bg-gradient-to-b from-black via-sky-950 to-emerald-900
 
 ">
   <header class="text-white ">
     <img alt="olivares sonriendo" src="./assets/olivares1.jpg"
-        class="h-full w-full object-cover object-top rounded-3xl shadow-lg mx-auto animate-pulse-fade-in"
-  style="mask-image: radial-gradient(circle at 50% -200%, white 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at 50% -140%, white 70%, transparent 98%);"
+        class="h-full w-full object-cover object-top rounded-4xl m-10 shadow-lg mx-auto animate-pulse-fade-in max-w-xl mx-auto"
+  style="mask-image: radial-gradient(circle at 50% -200%, white 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at 50% -70%, white 70%, transparent 96%);"
 />
 
     <header class="flex flex-col justify-center items-center mb-8 -mt-4">
@@ -79,16 +79,22 @@
       </a>
     </section>
 
-    <p class="text-midu-lol text-center mt-4 text-sm px-4 text-balance">
+    <p class="text-midu-lol text-center mt-4 text-sm px-4 text-balance max-w-xl mx-auto">
       Un apasionado de la programación y el desarrollo web. Aquí encontrarás enlaces a mis certificaciones, proyectos y redes sociales. ¡Espero que disfrutes del contenido!
     </p>
+  </header>
 
-    <main class="pt-4 px-4 pb-16">
-  <div id="bento-buttons" class="grid grid-cols-1 gap-4 w-full">
+<main class="pt-4 px-4 pb-16 p-96 ">
+ 
+  <!-- Contenido dinámico del bento -->
+  <div id="bento-content" class="mt-8"></div>
+</<!-- filepath: c:\Users\RafaelOlivares\Downloads\rafael-portafolio-mayo-2025\index.html -->
+<main class="pt-4 px-4 pb-16 ">
+  <div id="bento-buttons" class="grid grid-cols-1 gap-4 max-w-xl mx-auto text-white">
     <!-- Certificaciones -->
     <button
       id="btn-certificaciones"
-      class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-400 border border-emerald-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] text-left animate-fade-in"
+      class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-400 border border-emerald-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px]  text-left animate-fade-in"
       onclick="mostrarBento('certificaciones')"
     >
       <span class="font-bold text-2xl mb-2">Certificaciones</span>
@@ -99,8 +105,8 @@
     </button>
     <!-- Proyectos -->
     <button
-      id="btn-proyectos"
-      class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-900 via-sky-700 to-sky-400 border border-sky-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] text-left animate-fade-in"
+    id="btn-proyectos"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-900 via-sky-700 to-sky-400 border border-sky-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition group p-7 min-h-[120px] text-left animate-fade-in"
       onclick="mostrarBento('proyectos')"
     >
       <span class="font-bold text-2xl mb-2">Proyectos</span>
@@ -120,39 +126,112 @@ function mostrarBento(tipo) {
   document.getElementById('bento-buttons').style.display = 'none';
   const content = document.getElementById('bento-content');
   let html = `
-    <button onclick="volverBento()" class="flex items-center gap-2 mb-6 px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition font-semibold shadow animate-slide-down">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      Volver
-    </button>
+    <div class="flex justify-center mb-8">
+      <button onclick="volverBento()" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition font-semibold shadow animate-slide-down">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Volver
+      </button>
+    </div>
   `;
   if (tipo === 'certificaciones') {
     html += `
-      <div class="rounded-3xl bg-emerald-950/80 p-8 text-white shadow-2xl animate-fade-in">
-        <h2 class="text-2xl font-bold mb-4">Certificaciones</h2>
-        <ul class="list-disc pl-6 space-y-2 text-base">
-          <li>Certificado React - Cursoreact.dev</li>
-          <li>Certificado HTML/CSS - Midu.dev</li>
-          <li>Certificado Node.js - Cursoreact.dev</li>
+      <div class="rounded-3xl bg-emerald-950/80 p-8 text-white shadow-2xl animate-fade-in max-w-xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">Certificaciones</h2>
+        <ul class="space-y-6">
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso de CSS</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso de CSS.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+
+
+          
+
+
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso de Visual Studio Code y GitHub Copilot</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso de Visual Studio Code y GitHub Copilot.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Curso profesional de Python</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Curso profesional de Python.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+
+          
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">Introducción a Bash Scripting - Bootcamp DevOps</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - Introducción a Bash Scripting - Bootcamp DevOps.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+          
+          <li class="flex items-center justify-between gap-4 bg-emerald-900/60 rounded-2xl p-4">
+            <div>
+              <div class="font-semibold">LIVECLASS GitHub Copilot</div>
+              <div class="text-xs opacity-80">Codigofacilito</div>
+            </div>
+            <a href="assets/certificados/Certificado - LIVECLASS_ GitHub Copilot.pdf" target="_blank"
+              class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 transition text-white font-bold text-sm shadow">
+              Ver PDF
+            </a>
+          </li>
+          
+          
         </ul>
       </div>
     `;
   } else if (tipo === 'proyectos') {
     html += `
-      <div class="rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
+      <div class=" max-w-2xl items-center mx-auto rounded-3xl bg-sky-950/80 p-8 text-white shadow-2xl animate-fade-in">
         <h2 class="text-2xl font-bold mb-6">Proyectos</h2>
-        <div class="grid grid-cols-1 gap-4">
-          <a href="https://github.com/rafaolix/proyecto1" target="_blank"
-            class="block rounded-2xl bg-gradient-to-br from-sky-800 via-sky-600 to-sky-400 border border-sky-700 p-6 hover:scale-105 hover:contrast-125 transition shadow group animate-slide-up">
-            <span class="font-semibold text-lg">Proyecto 1</span>
-            <p class="text-xs mt-1 opacity-80">Descripción breve del proyecto 1.</p>
-          </a>
-          <a href="https://github.com/rafaolix/proyecto2" target="_blank"
-            class="block rounded-2xl bg-gradient-to-br from-sky-800 via-sky-600 to-sky-400 border border-sky-700 p-6 hover:scale-105 hover:contrast-125 transition shadow group animate-slide-up">
-            <span class="font-semibold text-lg">Proyecto 2</span>
-            <p class="text-xs mt-1 opacity-80">Descripción breve del proyecto 2.</p>
-          </a>
-          <!-- Agrega más proyectos aquí si lo deseas -->
-        </div>
+        <div class="flex flex-col items-center gap-8">
+  <div class="w-full max-w-2xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up">
+    <img src="./assets/proyecto1.jpg" alt="Proyecto 1" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4">
+    <div class="w-full text-center">
+      <div class="font-semibold text-xl mb-2">Proyecto 1</div>
+      <div class="text-sm opacity-80 mb-2">Descripción breve del proyecto 1.</div>
+      <a href="https://github.com/rafaolix/proyecto1" target="_blank" class="underline text-sky-300 hover:text-sky-100 transition">Ver en GitHub</a>
+    </div>
+  </div>
+  <div class="w-full max-w-4xl mx-auto bg-sky-900/60 rounded-2xl p-6 flex flex-col items-center shadow-lg animate-slide-up">
+    <img src="./assets/proyecto2.jpg" alt="Proyecto 2" class="w-full max-w-2xl h-72 object-cover rounded-xl shadow-lg mb-4">
+    <div class="w-full text-center">
+      <div class="font-semibold text-xl mb-2">Proyecto 2</div>
+      <div class="text-sm opacity-80 mb-2">Descripción breve del proyecto 2.</div>
+      <a href="https://github.com/rafaolix/proyecto2" target="_blank" class="underline text-sky-300 hover:text-sky-100 transition">Ver en GitHub</a>
+    </div>
+  </div>
+  <!-- Agrega más proyectos aquí si lo deseas -->
+</div>
       </div>
     `;
   }
@@ -164,7 +243,6 @@ function volverBento() {
   document.getElementById('bento-content').innerHTML = '';
 }
 </script>
-  </header>
 
 </body>
 
